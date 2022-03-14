@@ -6,10 +6,10 @@ use std::path::PathBuf;
 fn main() {
     println!("cargo:rerun-if-changed=wrapper.h");
 
-    let dst = cmake::build("src/cpp");
+    let dst = cmake::build("mymath");
     println!("cargo:rustc-link-search=native={}/lib", dst.display());
     println!("cargo:rustc-link-lib=dylib=stdc++");
-    println!("cargo:rustc-link-lib=static=MathFunctions");
+    println!("cargo:rustc-link-lib=static=MyMath");
 
     let bindings = bindgen::Builder::default()
         // The input header we would like to generate
