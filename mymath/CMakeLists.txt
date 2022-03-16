@@ -5,10 +5,7 @@ project(MyMath VERSION 1.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-add_library(MyMath mysqrt.cc)
-target_include_directories(MyMath
-  PUBLIC include
-)
+add_library(MyMath mysqrt.cc mymath.h)
 
 add_executable(MyMathTest test.cc)
 target_link_libraries(MyMathTest MyMath)
